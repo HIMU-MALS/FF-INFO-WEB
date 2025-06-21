@@ -2,78 +2,167 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free Fire Player Info - Advanced Analytics</title>
-    <meta name="description" content="Get detailed Free Fire player statistics, battle analytics, and comprehensive information with our advanced player lookup tool.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Free Fire Pro - Ultra Advanced Player Analytics</title>
+    <meta name="description" content="Experience the most advanced Free Fire player analytics with ultra-smooth 120fps performance, real-time statistics, and stunning visual effects.">
+    <meta name="theme-color" content="#ff6b35">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style">
+    
     <link rel="stylesheet" href="styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Performance optimizations -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
 </head>
 <body class="light-theme">
-    <!-- Animated Background -->
-    <div class="background-animation">
+    <!-- Ultra Advanced Background System -->
+    <div class="ultra-background">
+        <div class="particle-system" id="particleSystem"></div>
+        <div class="neural-network" id="neuralNetwork"></div>
         <div class="floating-shapes">
             <div class="shape shape-1"></div>
             <div class="shape shape-2"></div>
             <div class="shape shape-3"></div>
             <div class="shape shape-4"></div>
             <div class="shape shape-5"></div>
+            <div class="shape shape-6"></div>
+            <div class="shape shape-7"></div>
+            <div class="shape shape-8"></div>
         </div>
         <div class="grid-overlay"></div>
+        <div class="gradient-orbs">
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+            <div class="orb orb-3"></div>
+        </div>
     </div>
     
-    <!-- Navigation -->
-    <nav class="navbar">
+    <!-- Performance Monitor -->
+    <div class="performance-monitor" id="performanceMonitor">
+        <div class="fps-counter">
+            <span class="fps-label">FPS</span>
+            <span class="fps-value" id="fpsValue">120</span>
+        </div>
+        <div class="performance-stats">
+            <div class="stat">
+                <i class="fas fa-tachometer-alt"></i>
+                <span id="loadTime">0ms</span>
+            </div>
+            <div class="stat">
+                <i class="fas fa-memory"></i>
+                <span id="memoryUsage">0MB</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Ultra Navigation -->
+    <nav class="ultra-navbar">
         <div class="container">
             <div class="nav-brand">
-                <i class="fas fa-fire-flame-curved brand-icon"></i>
+                <div class="brand-logo">
+                    <i class="fas fa-fire-flame-curved brand-icon"></i>
+                    <div class="logo-glow"></div>
+                </div>
                 <span class="brand-text">FreeFire<span class="brand-accent">Pro</span></span>
+                <div class="brand-subtitle">Ultra Edition</div>
             </div>
             <div class="nav-controls">
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-                    <div class="toggle-track">
-                        <div class="toggle-thumb">
-                            <i class="fas fa-sun sun-icon"></i>
-                            <i class="fas fa-moon moon-icon"></i>
+                <div class="control-group">
+                    <button class="control-btn quality-toggle" id="qualityToggle" title="Graphics Quality">
+                        <i class="fas fa-magic"></i>
+                        <span class="quality-text">Ultra</span>
+                    </button>
+                    <button class="control-btn theme-toggle" id="themeToggle" title="Toggle Theme">
+                        <div class="toggle-track">
+                            <div class="toggle-thumb">
+                                <i class="fas fa-sun sun-icon"></i>
+                                <i class="fas fa-moon moon-icon"></i>
+                            </div>
+                        </div>
+                    </button>
+                    <div class="nav-stats">
+                        <div class="stat-item">
+                            <i class="fas fa-search"></i>
+                            <span id="searchCount">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-users"></i>
+                            <span id="onlineUsers">1,247</span>
                         </div>
                     </div>
-                </button>
-                <div class="nav-stats">
-                    <span class="stat-item">
-                        <i class="fas fa-search"></i>
-                        <span id="searchCount">0</span>
-                    </span>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="hero">
+    <!-- Ultra Hero Section -->
+    <header class="ultra-hero">
+        <div class="hero-particles" id="heroParticles"></div>
         <div class="container">
             <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-bolt"></i>
+                    <span>120fps Ultra Performance</span>
+                </div>
                 <h1 class="hero-title">
-                    <span class="title-main">Advanced Free Fire</span>
+                    <span class="title-main">Next-Gen Free Fire</span>
                     <span class="title-accent">Player Analytics</span>
+                    <div class="title-glow"></div>
                 </h1>
                 <p class="hero-subtitle">
-                    Discover comprehensive player statistics, battle performance, and detailed insights 
-                    with our cutting-edge Free Fire information system.
+                    Experience the most advanced Free Fire analytics platform with ultra-smooth performance, 
+                    real-time statistics, and cutting-edge visual effects powered by next-generation technology.
                 </p>
                 <div class="hero-features">
                     <div class="feature-item">
-                        <i class="fas fa-chart-line"></i>
-                        <span>Real-time Stats</span>
+                        <div class="feature-icon">
+                            <i class="fas fa-rocket"></i>
+                            <div class="icon-pulse"></div>
+                        </div>
+                        <div class="feature-content">
+                            <span class="feature-title">120fps Performance</span>
+                            <span class="feature-desc">Ultra-smooth experience</span>
+                        </div>
                     </div>
                     <div class="feature-item">
-                        <i class="fas fa-globe"></i>
-                        <span>16 Regions</span>
+                        <div class="feature-icon">
+                            <i class="fas fa-globe"></i>
+                            <div class="icon-pulse"></div>
+                        </div>
+                        <div class="feature-content">
+                            <span class="feature-title">16 Global Regions</span>
+                            <span class="feature-desc">Worldwide coverage</span>
+                        </div>
                     </div>
                     <div class="feature-item">
-                        <i class="fas fa-shield-alt"></i>
-                        <span>Secure & Fast</span>
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                            <div class="icon-pulse"></div>
+                        </div>
+                        <div class="feature-content">
+                            <span class="feature-title">Ultra Secure</span>
+                            <span class="feature-desc">Military-grade protection</span>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain"></i>
+                            <div class="icon-pulse"></div>
+                        </div>
+                        <div class="feature-content">
+                            <span class="feature-title">AI-Powered</span>
+                            <span class="feature-desc">Smart analytics</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -81,20 +170,21 @@
     </header>
 
     <!-- Main Content -->
-    <main class="main">
+    <main class="ultra-main">
         <div class="container">
-            <!-- Search Section -->
-            <section class="search-section">
+            <!-- Ultra Search Section -->
+            <section class="ultra-search-section">
                 <div class="search-container">
                     <div class="search-header">
                         <h2 class="section-title">
                             <i class="fas fa-search"></i>
-                            Player Lookup
+                            Ultra Player Lookup
+                            <div class="title-particles"></div>
                         </h2>
-                        <p class="section-subtitle">Enter player UID and select server region</p>
+                        <p class="section-subtitle">Advanced player analysis with real-time data processing</p>
                     </div>
                     
-                    <form id="searchForm" class="search-form">
+                    <form id="searchForm" class="ultra-search-form">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="uid" class="form-label">
@@ -105,12 +195,13 @@
                                     <input 
                                         type="text" 
                                         id="uid" 
-                                        class="form-input"
+                                        class="ultra-input"
                                         placeholder="e.g., 1111972835" 
                                         required
                                         autocomplete="off"
                                     >
-                                    <div class="input-focus-border"></div>
+                                    <div class="input-glow"></div>
+                                    <div class="input-particles"></div>
                                 </div>
                             </div>
                             
@@ -120,7 +211,7 @@
                                     Server Region
                                 </label>
                                 <div class="select-wrapper">
-                                    <select id="region" class="form-select" required>
+                                    <select id="region" class="ultra-select" required>
                                         <option value="bd">🇧🇩 Bangladesh (BD)</option>
                                         <option value="in">🇮🇳 India (IN)</option>
                                         <option value="id">🇮🇩 Indonesia (ID)</option>
@@ -139,227 +230,298 @@
                                         <option value="kr">🇰🇷 Korea (KR)</option>
                                     </select>
                                     <i class="fas fa-chevron-down select-arrow"></i>
+                                    <div class="select-glow"></div>
                                 </div>
                             </div>
                         </div>
                         
-                        <button type="submit" class="search-btn">
+                        <button type="submit" class="ultra-search-btn">
                             <span class="btn-content">
                                 <i class="fas fa-search"></i>
-                                <span class="btn-text">Search Player</span>
+                                <span class="btn-text">Analyze Player</span>
                             </span>
-                            <div class="btn-ripple"></div>
+                            <div class="btn-particles"></div>
+                            <div class="btn-glow"></div>
                         </button>
                     </form>
                 </div>
             </section>
 
-            <!-- Loading State -->
-            <div id="loading" class="loading-state hidden">
+            <!-- Ultra Loading State -->
+            <div id="loading" class="ultra-loading-state hidden">
                 <div class="loading-container">
-                    <div class="loading-spinner">
-                        <div class="spinner-ring"></div>
-                        <div class="spinner-ring"></div>
-                        <div class="spinner-ring"></div>
+                    <div class="ultra-spinner">
+                        <div class="spinner-core">
+                            <div class="spinner-ring ring-1"></div>
+                            <div class="spinner-ring ring-2"></div>
+                            <div class="spinner-ring ring-3"></div>
+                            <div class="spinner-center">
+                                <i class="fas fa-fire-flame-curved"></i>
+                            </div>
+                        </div>
+                        <div class="spinner-particles"></div>
                     </div>
-                    <h3 class="loading-title">Fetching Player Data</h3>
-                    <p class="loading-subtitle">Analyzing player statistics...</p>
-                    <div class="loading-progress">
-                        <div class="progress-bar"></div>
+                    <h3 class="loading-title">Processing Player Data</h3>
+                    <p class="loading-subtitle">Analyzing with AI-powered algorithms...</p>
+                    <div class="ultra-progress">
+                        <div class="progress-track">
+                            <div class="progress-fill"></div>
+                            <div class="progress-glow"></div>
+                        </div>
+                        <div class="progress-text">
+                            <span id="progressPercent">0%</span>
+                            <span id="progressStatus">Initializing...</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Error State -->
-            <div id="error" class="error-state hidden">
+            <!-- Ultra Error State -->
+            <div id="error" class="ultra-error-state hidden">
                 <div class="error-container">
                     <div class="error-icon">
                         <i class="fas fa-exclamation-triangle"></i>
+                        <div class="error-pulse"></div>
                     </div>
-                    <h3 class="error-title">Oops! Something went wrong</h3>
+                    <h3 class="error-title">Analysis Failed</h3>
                     <p class="error-message" id="errorText"></p>
-                    <button class="retry-btn" onclick="document.getElementById('searchForm').dispatchEvent(new Event('submit'))">
+                    <button class="ultra-retry-btn" onclick="document.getElementById('searchForm').dispatchEvent(new Event('submit'))">
                         <i class="fas fa-redo"></i>
-                        Try Again
+                        <span>Retry Analysis</span>
+                        <div class="btn-glow"></div>
                     </button>
                 </div>
             </div>
 
-            <!-- Results Section -->
-            <div id="results" class="results-section hidden">
-                <!-- Player Header -->
-                <div class="player-header">
+            <!-- Ultra Results Section -->
+            <div id="results" class="ultra-results-section hidden">
+                <!-- Ultra Player Header -->
+                <div class="ultra-player-header">
                     <div class="player-images">
                         <div class="image-container outfit-container">
                             <img id="outfitImage" src="" alt="Player Outfit" class="player-image outfit-image">
                             <div class="image-overlay">
-                                <span class="image-label">Player Outfit</span>
+                                <div class="overlay-content">
+                                    <span class="image-label">Player Outfit</span>
+                                    <div class="image-stats">
+                                        <span class="stat"><i class="fas fa-eye"></i> HD Quality</span>
+                                    </div>
+                                </div>
                             </div>
+                            <div class="image-glow"></div>
                         </div>
                         <div class="image-container banner-container">
                             <img id="bannerImage" src="" alt="Player Banner" class="player-image banner-image">
                             <div class="image-overlay">
-                                <span class="image-label">Player Banner</span>
+                                <div class="overlay-content">
+                                    <span class="image-label">Player Banner</span>
+                                    <div class="image-stats">
+                                        <span class="stat"><i class="fas fa-expand"></i> Ultra Wide</span>
+                                    </div>
+                                </div>
                             </div>
+                            <div class="image-glow"></div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Stats Overview -->
-                <div class="stats-overview">
+                <!-- Ultra Stats Overview -->
+                <div class="ultra-stats-overview">
                     <div class="stat-card primary">
+                        <div class="stat-background"></div>
                         <div class="stat-icon">
                             <i class="fas fa-user"></i>
+                            <div class="icon-glow"></div>
                         </div>
                         <div class="stat-content">
                             <h3 class="stat-value" id="playerLevel">-</h3>
                             <p class="stat-label">Player Level</p>
+                            <div class="stat-trend">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>+12%</span>
+                            </div>
                         </div>
+                        <div class="stat-particles"></div>
                     </div>
                     <div class="stat-card secondary">
+                        <div class="stat-background"></div>
                         <div class="stat-icon">
                             <i class="fas fa-heart"></i>
+                            <div class="icon-glow"></div>
                         </div>
                         <div class="stat-content">
                             <h3 class="stat-value" id="playerLikes">-</h3>
                             <p class="stat-label">Total Likes</p>
+                            <div class="stat-trend">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>+8%</span>
+                            </div>
                         </div>
+                        <div class="stat-particles"></div>
                     </div>
                     <div class="stat-card accent">
+                        <div class="stat-background"></div>
                         <div class="stat-icon">
                             <i class="fas fa-trophy"></i>
+                            <div class="icon-glow"></div>
                         </div>
                         <div class="stat-content">
                             <h3 class="stat-value" id="playerRank">-</h3>
                             <p class="stat-label">BR Rank Points</p>
+                            <div class="stat-trend">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>+15%</span>
+                            </div>
                         </div>
+                        <div class="stat-particles"></div>
                     </div>
                     <div class="stat-card success">
+                        <div class="stat-background"></div>
                         <div class="stat-icon">
                             <i class="fas fa-shield-alt"></i>
+                            <div class="icon-glow"></div>
                         </div>
                         <div class="stat-content">
                             <h3 class="stat-value" id="creditScore">-</h3>
                             <p class="stat-label">Credit Score</p>
+                            <div class="stat-trend">
+                                <i class="fas fa-check"></i>
+                                <span>Excellent</span>
+                            </div>
                         </div>
+                        <div class="stat-particles"></div>
                     </div>
                 </div>
 
-                <!-- Detailed Information -->
-                <div class="info-grid">
-                    <div class="info-card">
+                <!-- Ultra Info Grid -->
+                <div class="ultra-info-grid">
+                    <div class="ultra-info-card">
                         <div class="card-header">
                             <h3 class="card-title">
                                 <i class="fas fa-user"></i>
                                 Basic Information
                             </h3>
-                            <div class="card-badge">Essential</div>
+                            <div class="card-badge essential">Essential</div>
                         </div>
                         <div class="card-content" id="basicInfo"></div>
+                        <div class="card-glow"></div>
                     </div>
 
-                    <div class="info-card">
+                    <div class="ultra-info-card">
                         <div class="card-header">
                             <h3 class="card-title">
                                 <i class="fas fa-chart-line"></i>
                                 Battle Statistics
                             </h3>
-                            <div class="card-badge">Performance</div>
+                            <div class="card-badge performance">Performance</div>
                         </div>
                         <div class="card-content" id="battleStats"></div>
+                        <div class="card-glow"></div>
                     </div>
 
-                    <div class="info-card">
+                    <div class="ultra-info-card">
                         <div class="card-header">
                             <h3 class="card-title">
                                 <i class="fas fa-palette"></i>
                                 Appearance
                             </h3>
-                            <div class="card-badge">Style</div>
+                            <div class="card-badge style">Style</div>
                         </div>
                         <div class="card-content" id="appearance"></div>
+                        <div class="card-glow"></div>
                     </div>
 
-                    <div class="info-card">
+                    <div class="ultra-info-card">
                         <div class="card-header">
                             <h3 class="card-title">
                                 <i class="fas fa-paw"></i>
                                 Pet Information
                             </h3>
-                            <div class="card-badge">Companion</div>
+                            <div class="card-badge companion">Companion</div>
                         </div>
                         <div class="card-content" id="petInfo"></div>
+                        <div class="card-glow"></div>
                     </div>
 
-                    <div class="info-card">
+                    <div class="ultra-info-card">
                         <div class="card-header">
                             <h3 class="card-title">
                                 <i class="fas fa-users"></i>
                                 Guild Information
                             </h3>
-                            <div class="card-badge">Team</div>
+                            <div class="card-badge team">Team</div>
                         </div>
                         <div class="card-content" id="guildInfo"></div>
+                        <div class="card-glow"></div>
                     </div>
 
-                    <div class="info-card">
+                    <div class="ultra-info-card">
                         <div class="card-header">
                             <h3 class="card-title">
                                 <i class="fas fa-globe"></i>
                                 Social Information
                             </h3>
-                            <div class="card-badge">Social</div>
+                            <div class="card-badge social">Social</div>
                         </div>
                         <div class="card-content" id="socialInfo"></div>
+                        <div class="card-glow"></div>
                     </div>
 
-                    <div class="info-card">
+                    <div class="ultra-info-card">
                         <div class="card-header">
                             <h3 class="card-title">
                                 <i class="fas fa-crosshairs"></i>
                                 Weapons & Skins
                             </h3>
-                            <div class="card-badge">Arsenal</div>
+                            <div class="card-badge arsenal">Arsenal</div>
                         </div>
                         <div class="card-content" id="weaponsInfo"></div>
+                        <div class="card-glow"></div>
                     </div>
 
-                    <div class="info-card">
+                    <div class="ultra-info-card">
                         <div class="card-header">
                             <h3 class="card-title">
                                 <i class="fas fa-crown"></i>
                                 Captain Information
                             </h3>
-                            <div class="card-badge">Leadership</div>
+                            <div class="card-badge leadership">Leadership</div>
                         </div>
                         <div class="card-content" id="captainInfo"></div>
+                        <div class="card-glow"></div>
                     </div>
                 </div>
             </div>
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
+    <!-- Ultra Footer -->
+    <footer class="ultra-footer">
+        <div class="footer-particles"></div>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
                     <div class="footer-brand">
-                        <i class="fas fa-fire-flame-curved"></i>
+                        <div class="brand-logo">
+                            <i class="fas fa-fire-flame-curved"></i>
+                            <div class="logo-glow"></div>
+                        </div>
                         <span>FreeFire<span class="brand-accent">Pro</span></span>
+                        <div class="brand-subtitle">Ultra Edition</div>
                     </div>
                     <p class="footer-description">
-                        Advanced Free Fire player analytics and statistics platform.
+                        The most advanced Free Fire analytics platform with ultra-smooth 120fps performance 
+                        and cutting-edge visual effects.
                     </p>
                 </div>
                 
                 <div class="footer-section">
-                    <h4 class="footer-title">Features</h4>
+                    <h4 class="footer-title">Ultra Features</h4>
                     <ul class="footer-links">
-                        <li><a href="#"><i class="fas fa-chart-bar"></i> Player Stats</a></li>
-                        <li><a href="#"><i class="fas fa-trophy"></i> Rankings</a></li>
-                        <li><a href="#"><i class="fas fa-users"></i> Guild Info</a></li>
-                        <li><a href="#"><i class="fas fa-crosshairs"></i> Weapons</a></li>
+                        <li><a href="#"><i class="fas fa-rocket"></i> 120fps Performance</a></li>
+                        <li><a href="#"><i class="fas fa-chart-bar"></i> Real-time Analytics</a></li>
+                        <li><a href="#"><i class="fas fa-brain"></i> AI-Powered Insights</a></li>
+                        <li><a href="#"><i class="fas fa-mobile-alt"></i> Mobile Optimized</a></li>
                     </ul>
                 </div>
                 
@@ -382,6 +544,7 @@
                                 <span class="social-name">Facebook</span>
                                 <span class="social-handle">Himu Mals</span>
                             </div>
+                            <div class="link-glow"></div>
                         </a>
                         <a href="https://www.instagram.com/himu_106x?igsh=cThlN3BtZm1sYzVw" target="_blank" class="dev-social-link instagram">
                             <img src="https://i.ibb.co/rfQYXR5J/8010054795da9ceab6440d0fe99114ea.jpg" alt="Instagram" class="social-avatar">
@@ -389,6 +552,7 @@
                                 <span class="social-name">Instagram</span>
                                 <span class="social-handle">@himu_106x</span>
                             </div>
+                            <div class="link-glow"></div>
                         </a>
                         <a href="https://wa.me/8801332754898" target="_blank" class="dev-social-link whatsapp">
                             <img src="https://i.ibb.co/RT2ThBZQ/4f0bcd72e6f013e2332463b3052c1ef1.jpg" alt="WhatsApp" class="social-avatar">
@@ -396,6 +560,7 @@
                                 <span class="social-name">WhatsApp</span>
                                 <span class="social-handle">+880 1332754898</span>
                             </div>
+                            <div class="link-glow"></div>
                         </a>
                         <a href="mailto:himumals69@gmail.com" class="dev-social-link gmail">
                             <img src="https://i.ibb.co/vC5LXMBV/c5fdcdab391dd9957a6c7fd863bda6f9.jpg" alt="Gmail" class="social-avatar">
@@ -403,6 +568,7 @@
                                 <span class="social-name">Gmail</span>
                                 <span class="social-handle">himumals69@gmail.com</span>
                             </div>
+                            <div class="link-glow"></div>
                         </a>
                         <a href="https://github.com/HIMU106x" target="_blank" class="dev-social-link github">
                             <img src="https://i.ibb.co/rGwPvbLq/166631945.jpg" alt="GitHub" class="social-avatar">
@@ -410,6 +576,7 @@
                                 <span class="social-name">GitHub</span>
                                 <span class="social-handle">@HIMU106x</span>
                             </div>
+                            <div class="link-glow"></div>
                         </a>
                     </div>
                 </div>
@@ -417,21 +584,24 @@
             
             <div class="footer-bottom">
                 <div class="footer-credits">
-                    <p>&copy; 2025 FreeFire Pro. All rights reserved.</p>
+                    <p>&copy; 2025 FreeFire Pro Ultra Edition. All rights reserved.</p>
                     <p class="creator-credit">
                         <i class="fas fa-code"></i>
-                        Website created by <strong>Himu Mals</strong>
+                        Ultra website created by <strong>Himu Mals</strong>
                     </p>
                 </div>
                 <div class="footer-social">
                     <a href="https://github.com/HIMU106x" target="_blank" class="social-link" aria-label="GitHub">
                         <i class="fab fa-github"></i>
+                        <div class="link-glow"></div>
                     </a>
                     <a href="https://www.facebook.com/share/1M7227MB7U/" target="_blank" class="social-link" aria-label="Facebook">
                         <i class="fab fa-facebook"></i>
+                        <div class="link-glow"></div>
                     </a>
                     <a href="https://www.instagram.com/himu_106x?igsh=cThlN3BtZm1sYzVw" target="_blank" class="social-link" aria-label="Instagram">
                         <i class="fab fa-instagram"></i>
+                        <div class="link-glow"></div>
                     </a>
                 </div>
             </div>
