@@ -4,7 +4,6 @@ const cors = require('cors');
 const path = require('path');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(cors());
@@ -171,7 +170,16 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-app.listen(PORT, () => {
-  console.log(`🔥 Advanced Free Fire Info Website running on port ${PORT}`);
-  console.log(`🌐 Visit: http://localhost:${PORT}`);
+// Default port (for platforms like Render/Vercel)
+const DEFAULT_PORT = process.env.PORT || 3000;
+app.listen(DEFAULT_PORT, () => {
+  console.log(`🔥 Main server running on port ${DEFAULT_PORT}`);
+});
+
+// Custom extra ports (locally only)
+const extraPorts = [1126, 1269, 4299, 4330];
+extraPorts.forEach(port => {
+  app.listen(port, () => {
+    console.log(`🚀 Also listening on port ${port}`);
+  });
 });
