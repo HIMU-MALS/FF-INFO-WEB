@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Fire Player Info - Advanced Analytics</title>
+    <meta name="description" content="Get detailed Free Fire player statistics, battle analytics, and comprehensive information with our advanced player lookup tool.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="light-theme">
+    <!-- Animated Background -->
+    <div class="background-animation">
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+            <div class="shape shape-5"></div>
+        </div>
+        <div class="grid-overlay"></div>
+    </div>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-fire-flame-curved brand-icon"></i>
+                <span class="brand-text">FreeFire<span class="brand-accent">Pro</span></span>
+            </div>
+            <div class="nav-controls">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <div class="toggle-track">
+                        <div class="toggle-thumb">
+                            <i class="fas fa-sun sun-icon"></i>
+                            <i class="fas fa-moon moon-icon"></i>
+                        </div>
+                    </div>
+                </button>
+                <div class="nav-stats">
+                    <span class="stat-item">
+                        <i class="fas fa-search"></i>
+                        <span id="searchCount">0</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="title-main">Advanced Free Fire</span>
+                    <span class="title-accent">Player Analytics</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Discover comprehensive player statistics, battle performance, and detailed insights 
+                    with our cutting-edge Free Fire information system.
+                </p>
+                <div class="hero-features">
+                    <div class="feature-item">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Real-time Stats</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-globe"></i>
+                        <span>16 Regions</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Secure & Fast</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Search Section -->
+            <section class="search-section">
+                <div class="search-container">
+                    <div class="search-header">
+                        <h2 class="section-title">
+                            <i class="fas fa-search"></i>
+                            Player Lookup
+                        </h2>
+                        <p class="section-subtitle">Enter player UID and select server region</p>
+                    </div>
+                    
+                    <form id="searchForm" class="search-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="uid" class="form-label">
+                                    <i class="fas fa-hashtag"></i>
+                                    Player UID
+                                </label>
+                                <div class="input-wrapper">
+                                    <input 
+                                        type="text" 
+                                        id="uid" 
+                                        class="form-input"
+                                        placeholder="e.g., 1111972835" 
+                                        required
+                                        autocomplete="off"
+                                    >
+                                    <div class="input-focus-border"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="region" class="form-label">
+                                    <i class="fas fa-globe-americas"></i>
+                                    Server Region
+                                </label>
+                                <div class="select-wrapper">
+                                    <select id="region" class="form-select" required>
+                                        <option value="bd">🇧🇩 Bangladesh (BD)</option>
+                                        <option value="in">🇮🇳 India (IN)</option>
+                                        <option value="id">🇮🇩 Indonesia (ID)</option>
+                                        <option value="sg">🇸🇬 Singapore (SG)</option>
+                                        <option value="th">🇹🇭 Thailand (TH)</option>
+                                        <option value="vn">🇻🇳 Vietnam (VN)</option>
+                                        <option value="br">🇧🇷 Brazil (BR)</option>
+                                        <option value="mx">🇲🇽 Mexico (MX)</option>
+                                        <option value="na">🇺🇸 North America (NA)</option>
+                                        <option value="me">🇦🇪 Middle East (ME)</option>
+                                        <option value="eu">🇪🇺 Europe (EU)</option>
+                                        <option value="pk">🇵🇰 Pakistan (PK)</option>
+                                        <option value="ru">🇷🇺 Russia (RU)</option>
+                                        <option value="my">🇲🇾 Malaysia (MY)</option>
+                                        <option value="tw">🇹🇼 Taiwan (TW)</option>
+                                        <option value="kr">🇰🇷 Korea (KR)</option>
+                                    </select>
+                                    <i class="fas fa-chevron-down select-arrow"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="search-btn">
+                            <span class="btn-content">
+                                <i class="fas fa-search"></i>
+                                <span class="btn-text">Search Player</span>
+                            </span>
+                            <div class="btn-ripple"></div>
+                        </button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Loading State -->
+            <div id="loading" class="loading-state hidden">
+                <div class="loading-container">
+                    <div class="loading-spinner">
+                        <div class="spinner-ring"></div>
+                        <div class="spinner-ring"></div>
+                        <div class="spinner-ring"></div>
+                    </div>
+                    <h3 class="loading-title">Fetching Player Data</h3>
+                    <p class="loading-subtitle">Analyzing player statistics...</p>
+                    <div class="loading-progress">
+                        <div class="progress-bar"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Error State -->
+            <div id="error" class="error-state hidden">
+                <div class="error-container">
+                    <div class="error-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h3 class="error-title">Oops! Something went wrong</h3>
+                    <p class="error-message" id="errorText"></p>
+                    <button class="retry-btn" onclick="document.getElementById('searchForm').dispatchEvent(new Event('submit'))">
+                        <i class="fas fa-redo"></i>
+                        Try Again
+                    </button>
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <div id="results" class="results-section hidden">
+                <!-- Player Header -->
+                <div class="player-header">
+                    <div class="player-images">
+                        <div class="image-container outfit-container">
+                            <img id="outfitImage" src="" alt="Player Outfit" class="player-image outfit-image">
+                            <div class="image-overlay">
+                                <span class="image-label">Player Outfit</span>
+                            </div>
+                        </div>
+                        <div class="image-container banner-container">
+                            <img id="bannerImage" src="" alt="Player Banner" class="player-image banner-image">
+                            <div class="image-overlay">
+                                <span class="image-label">Player Banner</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats Overview -->
+                <div class="stats-overview">
+                    <div class="stat-card primary">
+                        <div class="stat-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 class="stat-value" id="playerLevel">-</h3>
+                            <p class="stat-label">Player Level</p>
+                        </div>
+                    </div>
+                    <div class="stat-card secondary">
+                        <div class="stat-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 class="stat-value" id="playerLikes">-</h3>
+                            <p class="stat-label">Total Likes</p>
+                        </div>
+                    </div>
+                    <div class="stat-card accent">
+                        <div class="stat-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 class="stat-value" id="playerRank">-</h3>
+                            <p class="stat-label">BR Rank Points</p>
+                        </div>
+                    </div>
+                    <div class="stat-card success">
+                        <div class="stat-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 class="stat-value" id="creditScore">-</h3>
+                            <p class="stat-label">Credit Score</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Detailed Information -->
+                <div class="info-grid">
+                    <div class="info-card">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <i class="fas fa-user"></i>
+                                Basic Information
+                            </h3>
+                            <div class="card-badge">Essential</div>
+                        </div>
+                        <div class="card-content" id="basicInfo"></div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <i class="fas fa-chart-line"></i>
+                                Battle Statistics
+                            </h3>
+                            <div class="card-badge">Performance</div>
+                        </div>
+                        <div class="card-content" id="battleStats"></div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <i class="fas fa-palette"></i>
+                                Appearance
+                            </h3>
+                            <div class="card-badge">Style</div>
+                        </div>
+                        <div class="card-content" id="appearance"></div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <i class="fas fa-paw"></i>
+                                Pet Information
+                            </h3>
+                            <div class="card-badge">Companion</div>
+                        </div>
+                        <div class="card-content" id="petInfo"></div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <i class="fas fa-users"></i>
+                                Guild Information
+                            </h3>
+                            <div class="card-badge">Team</div>
+                        </div>
+                        <div class="card-content" id="guildInfo"></div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <i class="fas fa-globe"></i>
+                                Social Information
+                            </h3>
+                            <div class="card-badge">Social</div>
+                        </div>
+                        <div class="card-content" id="socialInfo"></div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <i class="fas fa-crosshairs"></i>
+                                Weapons & Skins
+                            </h3>
+                            <div class="card-badge">Arsenal</div>
+                        </div>
+                        <div class="card-content" id="weaponsInfo"></div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <i class="fas fa-crown"></i>
+                                Captain Information
+                            </h3>
+                            <div class="card-badge">Leadership</div>
+                        </div>
+                        <div class="card-content" id="captainInfo"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <i class="fas fa-fire-flame-curved"></i>
+                        <span>FreeFire<span class="brand-accent">Pro</span></span>
+                    </div>
+                    <p class="footer-description">
+                        Advanced Free Fire player analytics and statistics platform.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Features</h4>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chart-bar"></i> Player Stats</a></li>
+                        <li><a href="#"><i class="fas fa-trophy"></i> Rankings</a></li>
+                        <li><a href="#"><i class="fas fa-users"></i> Guild Info</a></li>
+                        <li><a href="#"><i class="fas fa-crosshairs"></i> Weapons</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-question-circle"></i> Help Center</a></li>
+                        <li><a href="#"><i class="fas fa-bug"></i> Report Bug</a></li>
+                        <li><a href="#"><i class="fas fa-envelope"></i> Contact</a></li>
+                        <li><a href="#"><i class="fas fa-shield-alt"></i> Privacy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-credits">
+                    <p>&copy; 2025 FreeFire Pro. All rights reserved.</p>
+                    <p class="creator-credit">
+                        <i class="fas fa-code"></i>
+                        Website created by <strong>Himu Mals</strong>
+                    </p>
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-link" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Discord">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

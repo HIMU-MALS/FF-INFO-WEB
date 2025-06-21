@@ -1,0 +1,15 @@
+{
+  "name": "freefire-info-website",
+  "version": "2.0.0",
+  "description": "Advanced Free Fire Player Information Website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "axios": "^1.6.0",
+    "cors": "^2.8.5"
+  }
+}
