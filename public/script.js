@@ -444,9 +444,9 @@ class UltraFreeFire {
     updateUltraStatsOverview(data) {
         const stats = [
             { id: 'playerLevel', value: data.basic.level },
-            { id: 'playerLikes', value: this.formatNumber(data.basic.likes) },
-            { id: 'playerRank', value: this.formatNumber(data.battleStats.brRankPoints) },
-            { id: 'creditScore', value: this.formatNumber(data.battleStats.creditScore) }
+            { id: 'playerLikes', value: data.basic.likes },
+            { id: 'playerRank', value: data.battleStats.brRankPoints },
+            { id: 'creditScore', value: data.battleStats.creditScore }
         ];
 
         stats.forEach((stat, index) => {
@@ -458,6 +458,25 @@ class UltraFreeFire {
 
     animateStatValue(elementId, finalValue) {
         const element = document.getElementById(elementId);
+        
+        // If finalValue is already formatted (like "54.2K"), use it directly
+        if (typeof finalValue === 'string' && (finalValue.includes('K') || finalValue.includes('M') || finalValue.includes('B'))) {
+            element.textContent = finalValue;
+            this.addStatParticles(element);
+            return;
+        }
+        
+        // Convert to number for animation
+        const numericValue = typeof finalValue === 'string' ? 
+            parseFloat(finalValue.replace(/[^\d.-]/g, '')) : 
+            parseFloat(finalValue);
+        
+        if (isNaN(numericValue)) {
+            element.textContent = finalValue || '-';
+            this.addStatParticles(element);
+            return;
+        }
+        
         const startValue = 0;
         const duration = 1000;
         const startTime = performance.now();
@@ -469,22 +488,16 @@ class UltraFreeFire {
             // Easing function for smooth animation
             const easeOutQuart = 1 - Math.pow(1 - progress, 4);
             
-            if (typeof finalValue === 'string' && finalValue !== '-') {
-                // For formatted numbers, animate the numeric part
-                const numericValue = parseInt(finalValue.replace(/[^\d]/g, ''));
-                if (!isNaN(numericValue)) {
-                    const currentValue = Math.round(startValue + (numericValue - startValue) * easeOutQuart);
-                    element.textContent = this.formatNumber(currentValue);
-                } else {
-                    element.textContent = finalValue;
-                }
-            } else {
-                element.textContent = finalValue || '-';
-            }
+            const currentValue = Math.round(startValue + (numericValue - startValue) * easeOutQuart);
+            
+            // Use formatNumber to properly format the animated value
+            element.textContent = this.formatNumber(currentValue);
 
             if (progress < 1) {
                 requestAnimationFrame(animate);
             } else {
+                // Ensure final value is properly formatted
+                element.textContent = this.formatNumber(numericValue);
                 this.addStatParticles(element);
             }
         };
