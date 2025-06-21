@@ -939,15 +939,22 @@ class UltraFreeFire {
     }
 
     formatNumber(num) {
-        if (!num || num === '-') return '-';
-        const number = parseInt(num);
-        if (isNaN(number)) return num;
+        if (!num || num === '-' || num === 0) return '-';
         
-        if (number >= 1000000) {
-            return (number / 1000000).toFixed(1) + 'M';
+        // Convert to number if it's a string
+        const number = typeof num === 'string' ? parseFloat(num.replace(/[^\d.-]/g, '')) : num;
+        
+        if (isNaN(number) || number === 0) return '-';
+        
+        // Format based on size
+        if (number >= 1000000000) {
+            return (number / 1000000000).toFixed(1).replace(/\.0$/, '') + 'B';
+        } else if (number >= 1000000) {
+            return (number / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
         } else if (number >= 1000) {
-            return (number / 1000).toFixed(1) + 'K';
+            return (number / 1000).toFixed(1).replace(/\.0$/, '') + 'K';
         }
+        
         return number.toLocaleString();
     }
 
