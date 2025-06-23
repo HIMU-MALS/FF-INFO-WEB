@@ -442,12 +442,15 @@ class UltraFreeFire {
     }
 
     updateUltraStatsOverview(data) {
+        // Format the values BEFORE passing to animation
         const stats = [
-            { id: 'playerLevel', value: data.basic.level },
-            { id: 'playerLikes', value: data.basic.likes },
-            { id: 'playerRank', value: data.battleStats.brRankPoints },
-            { id: 'creditScore', value: data.battleStats.creditScore }
+            { id: 'playerLevel', value: this.formatNumber(data.basic.level) },
+            { id: 'playerLikes', value: this.formatNumber(data.basic.likes) },
+            { id: 'playerRank', value: this.formatNumber(data.battleStats.brRankPoints) },
+            { id: 'creditScore', value: this.formatNumber(data.battleStats.creditScore) }
         ];
+
+        console.log('Stats being animated:', stats); // Debug log
 
         stats.forEach((stat, index) => {
             setTimeout(() => {
@@ -459,8 +462,10 @@ class UltraFreeFire {
     animateStatValue(elementId, finalValue) {
         const element = document.getElementById(elementId);
         
-        // If finalValue is already formatted (like "54.2K"), use it directly
-        if (typeof finalValue === 'string' && (finalValue.includes('K') || finalValue.includes('M') || finalValue.includes('B'))) {
+        console.log(`Animating ${elementId} with value:`, finalValue); // Debug log
+        
+        // If finalValue is already formatted (like "54.2K"), display it directly
+        if (typeof finalValue === 'string' && (finalValue.includes('K') || finalValue.includes('M') || finalValue.includes('B') || finalValue === '-')) {
             element.textContent = finalValue;
             this.addStatParticles(element);
             return;
@@ -477,6 +482,7 @@ class UltraFreeFire {
             return;
         }
         
+        // Animate from 0 to the numeric value, then format the result
         const startValue = 0;
         const duration = 1000;
         const startTime = performance.now();
@@ -490,7 +496,7 @@ class UltraFreeFire {
             
             const currentValue = Math.round(startValue + (numericValue - startValue) * easeOutQuart);
             
-            // Use formatNumber to properly format the animated value
+            // Format the current animated value
             element.textContent = this.formatNumber(currentValue);
 
             if (progress < 1) {
