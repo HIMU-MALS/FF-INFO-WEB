@@ -1285,8 +1285,10 @@ body {
 }
 
 .banner-image {
-  width: 400px;
-  height: 350px;
+  width: 500px;
+  height: 200px;
+  object-fit: contain;
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
 }
 
 .image-overlay {
@@ -1890,8 +1892,8 @@ body {
   }
   
   .banner-image {
-    width: 350px;
-    height: 300px;
+    width: 450px;
+    height: 180px;
   }
   
   .outfit-image {
@@ -1960,8 +1962,8 @@ body {
   }
   
   .banner-image {
-    width: 320px;
-    height: 280px;
+    width: 350px;
+    height: 140px;
   }
   
   .ultra-stats-overview {
@@ -2026,8 +2028,8 @@ body {
   }
   
   .banner-image {
-    width: 280px;
-    height: 240px;
+    width: 300px;
+    height: 120px;
   }
   
   .stat-card {
